@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNE"
         mc:Ignorable="d"
-        Title="UNE" Height="700" Width="1280" WindowStartupLocation="CenterScreen">
-    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,2,0">
+        Title="UNE" Height="897" Width="1280" WindowStartupLocation="CenterScreen">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,2,-205">
         <TextBox x:Name="txtName" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="1036,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" MaxLines="1" Foreground="#FF090B6F"/>
         <Label x:Name="label" Content="Nome" HorizontalAlignment="Left" Margin="1031,22,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" FontSize="14" FontWeight="Medium"/>
         <TextBox x:Name="txtInstitution" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="1036,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
@@ -31,7 +31,10 @@
         <Label x:Name="label_Copy4" Content="RG" HorizontalAlignment="Left" Margin="1032,326,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" RenderTransformOrigin="-0.4,0.52" FontSize="14" FontWeight="Medium"/>
         <TextBox x:Name="txtCpf" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="1036,422,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
         <Label x:Name="label_Copy5" Content="CPF" HorizontalAlignment="Left" Margin="1032,392,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" RenderTransformOrigin="-0.611,0.28" FontSize="14" FontWeight="Medium"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="1091,497,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\mateu\source\repos\UNE\UNE\download.jpeg"/>
-        <Label x:Name="label1" Content="Foto" HorizontalAlignment="Left" Margin="1120,470,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" FontSize="14" FontWeight="Medium"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="1096,557,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\mateu\source\repos\UNE\UNE\download.jpeg"/>
+        <Label x:Name="label1" Content="Foto" HorizontalAlignment="Left" Margin="1125,530,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" FontSize="14" FontWeight="Medium"/>
+        <Button x:Name="btnArchive" Content="Arquivo" HorizontalAlignment="Left" Margin="1036,481,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click" Height="35"/>
+        <Button x:Name="btnCam" Content="Câmera" HorizontalAlignment="Left" Margin="1146,481,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click" Height="35"/>
+        <Button x:Name="btnSave" Content="Salvar" HorizontalAlignment="Left" Margin="1094,723,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click" Height="35"/>
     </Grid>
 </Window>
