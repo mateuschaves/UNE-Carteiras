@@ -5,11 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNE"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="606,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
-        <Label x:Name="label" Content="Nome" HorizontalAlignment="Left" Margin="606,10,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtName_Copy" HorizontalAlignment="Left" Height="23" Margin="606,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
-        <Label x:Name="label_Copy" Content="Instituição de ensino" HorizontalAlignment="Left" Margin="606,82,0,0" VerticalAlignment="Top"/>
+        Title="UNE" Height="700" Width="1280" WindowStartupLocation="CenterScreen">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,2,0">
+        <TextBox x:Name="txtName" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="1036,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" MaxLines="1" Foreground="#FF090B6F"/>
+        <Label x:Name="label" Content="Nome" HorizontalAlignment="Left" Margin="1031,22,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" FontSize="14" FontWeight="Medium"/>
+        <TextBox x:Name="txtInstitution" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="1036,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
+        <Label x:Name="label_Copy" Content="Instituição de ensino" HorizontalAlignment="Left" Margin="1032,82,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" FontSize="14" FontWeight="Medium"/>
+        <TextBox x:Name="txtCourse" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="1036,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
+        <Label x:Name="label_Copy1" Content="Curso/Série/Ensino" HorizontalAlignment="Left" Margin="1032,142,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" FontSize="14" FontWeight="Medium"/>
+        <ComboBox x:Name="cmbCourse" VerticalContentAlignment="Center" Margin="1036,227,0,0" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Width="212" Height="30">
+            <ComboBoxItem Content="Doutorado" HorizontalAlignment="Left" Width="174" Selected="ComboBoxItem_Selected"/>
+            <ComboBoxItem Content="Ensino Médio" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem Content="Fundamental" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem Content="Graduação" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem Content="Mestrado" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem Content="Pré-vestibular" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem Content="Preparatório" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem Content="Pós-graduação" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem Content="Técnico" HorizontalAlignment="Left" Width="174"/>
+        </ComboBox>
+        <Label x:Name="label_Copy2"  Content="Tipo de curso" HorizontalAlignment="Left" Margin="1031,202,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" FontSize="14" FontWeight="Medium"/>
+        <Label x:Name="label_Copy3" Content="Data de nascimento" HorizontalAlignment="Left" Margin="1031,262,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" FontSize="14" FontWeight="Medium"/>
+        <DatePicker x:Name="dtpDate" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1036,286,0,0" VerticalAlignment="Top" Width="212" Height="35"/>
+        <TextBox x:Name="txtRg" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="1036,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
+        <Label x:Name="label_Copy4" Content="RG" HorizontalAlignment="Left" Margin="1032,326,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" RenderTransformOrigin="-0.4,0.52" FontSize="14" FontWeight="Medium"/>
+        <TextBox x:Name="txtCpf" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="1036,422,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
+        <Label x:Name="label_Copy5" Content="CPF" HorizontalAlignment="Left" Margin="1032,392,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" RenderTransformOrigin="-0.611,0.28" FontSize="14" FontWeight="Medium"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="1091,497,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\mateu\source\repos\UNE\UNE\download.jpeg"/>
+        <Label x:Name="label1" Content="Foto" HorizontalAlignment="Left" Margin="1120,470,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" FontSize="14" FontWeight="Medium"/>
     </Grid>
 </Window>
