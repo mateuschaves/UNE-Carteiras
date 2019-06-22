@@ -1,0 +1,15 @@
+C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\UNE.exe.config
+C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\UNE.exe
+C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\UNE.pdb
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.csprojAssemblyReference.cache
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\MainWindow.g.cs
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\App.g.cs
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE_MarkupCompile.cache
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE_MarkupCompile.lref
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\MainWindow.baml
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.g.resources
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.Properties.Resources.resources
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.csproj.GenerateResource.cache
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.csproj.CoreCompileInputs.cache
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.exe
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.pdb
