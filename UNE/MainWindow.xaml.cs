@@ -33,16 +33,48 @@ namespace UNE
         }
 
         List<object> carteiras = new List<object>();
+        List<object> carteirasEmpty = new List<object>();
 
         public MainWindow()
         {
+            
             InitializeComponent();
 
-            carteiras.Add(new { Nome = "Oie", Instituição = "asd", RG = "asd", Código = "123", Expedição = "123123" });
-
+            if (this.loadRegisters() == 0)
+            {
+                dataGrid.Opacity = 0;
+                noData.Opacity = 100;
+            }
+            else
+            {
+                noData.Opacity = 0;
+                dataGrid.Opacity = 100;
+            }
             dataGrid.MaxColumnWidth = 200;
             dataGrid.MinColumnWidth = 120;
             dataGrid.ItemsSource = carteiras;
+
+        }
+
+        public int loadRegisters()
+        {
+            int count = 0;
+            var connString = "Server=localhost;Database=une-carteirinhas;Uid=root;Pwd=";
+            var connection = new MySqlConnection(connString);
+            var command = connection.CreateCommand();
+            connection.Open();
+            command.CommandText = "SELECT * FROM carteiras";
+            MySqlDataReader response = command.ExecuteReader();
+            carteiras.Clear();
+            while (response.Read())
+            {
+                count++;
+                carteiras.Add(new { Nome = response["name"], Instituição = response["institution"], RG = response["rg"], Código = response["code"], Expedição = response["createdAt"] });
+            }
+            dataGrid.ItemsSource = carteirasEmpty;
+            dataGrid.ItemsSource = carteiras;
+            dataGrid.Items.Refresh();
+            return count;
         }
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -73,12 +105,16 @@ namespace UNE
                 command.Parameters.Add("@coursetype", MySqlDbType.VarChar).Value = cmbCourse.Text;
                 command.ExecuteNonQuery();
 
-
-                carteiras.Add(new { Nome = txtName.Text, Instituição = txtInstitution.Text, RG = txtRg.Text, Código = "asdasdasd", Expedição = new DateTime().Day + "/" + new DateTime().Month + "/" + new DateTime().Year }) ;
-
-
-                dataGrid.ItemsSource = carteiras;
-                dataGrid.Items.Refresh();
+                if (this.loadRegisters() == 0)
+                {
+                    dataGrid.Opacity = 0;
+                    noData.Opacity = 100;
+                }
+                else
+                {
+                    noData.Opacity = 0;
+                    dataGrid.Opacity = 100;
+                }
 
             }
             finally
@@ -92,11 +128,6 @@ namespace UNE
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var carteiras = new[]
-            {
-                new {Nome = "", Instituição = "", RG = "", Código = "", Expedição = ""}
-            };
-            dataGrid.ItemsSource = carteiras;
         }
     }
 }

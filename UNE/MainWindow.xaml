@@ -40,5 +40,6 @@
             
         </DataGrid>
         <Grid HorizontalAlignment="Left" Height="100" Margin="200,285,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="noData" FontSize="30" Content="Sem registros" HorizontalAlignment="Left" Margin="458,241,0,0" VerticalAlignment="Top" Width="319"/>
     </Grid>
 </Window>
