@@ -36,14 +36,8 @@
         <Button x:Name="btnArchive" Content="Arquivo" HorizontalAlignment="Left" Margin="1036,481,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click" Height="35"/>
         <Button x:Name="btnCam" Content="Câmera" HorizontalAlignment="Left" Margin="1146,481,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click" Height="35"/>
         <Button x:Name="btnSave" Content="Salvar" HorizontalAlignment="Left" Margin="1094,723,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click" Height="35"/>
-        <DataGrid x:Name="dataGrid" CanUserAddRows="False" Background="White" HorizontalAlignment="Left" Height="700" Margin="104,22,0,0" VerticalAlignment="Top" Width="862" RowBackground="Black" IsReadOnly="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Nome" Width="300" IsReadOnly="True" CanUserResize="False"/>
-                <DataGridTextColumn Header="Instituição" Width="200" IsReadOnly="True" CanUserResize="False" FontFamily="Arial"/>
-                <DataGridTextColumn Header="RG" Width="120" IsReadOnly="True" CanUserResize="False"/>
-                <DataGridTextColumn Header="Código" Width="100" IsReadOnly="True" CanUserResize="False"/>
-                <DataGridTextColumn Header="Data de impressão" Width="140" IsReadOnly="True" CanUserResize="False"/>
-            </DataGrid.Columns>
+        <DataGrid x:Name="dataGrid" Background="White" HorizontalAlignment="Left" Height="700" Margin="104,22,0,0" VerticalAlignment="Top" Width="862" RowBackground="White" IsReadOnly="True" HorizontalGridLinesBrush="#FF100D0D" BorderBrush="White" SelectionChanged="DataGrid_SelectionChanged">
+            
         </DataGrid>
         <Grid HorizontalAlignment="Left" Height="100" Margin="200,285,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>

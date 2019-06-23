@@ -22,12 +22,28 @@ namespace UNE
     /// </summary>
     public partial class MainWindow : Window
     {
-       
+
+        public struct MyData
+        {
+            public string name { set; get; }
+            public string institution { set; get; }
+            public string rg { set; get; }
+            public string code { set; get; }
+            public DateTime printDate { set; get; }
+        }
+
+        List<object> carteiras = new List<object>();
+
         public MainWindow()
         {
             InitializeComponent();
-        }
 
+            carteiras.Add(new { Nome = "Oie", Instituição = "asd", RG = "asd", Código = "123", Expedição = "123123" });
+
+            dataGrid.MaxColumnWidth = 200;
+            dataGrid.MinColumnWidth = 120;
+            dataGrid.ItemsSource = carteiras;
+        }
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -43,7 +59,6 @@ namespace UNE
             var connString = "Server=localhost;Database=une-carteirinhas;Uid=root;Pwd=";
             var connection = new MySqlConnection(connString);
             var command = connection.CreateCommand();
-
             try
             {
                 connection.Open();
@@ -57,6 +72,14 @@ namespace UNE
                 command.Parameters.Add("@course", MySqlDbType.VarChar).Value = txtCourse.Text.Trim();
                 command.Parameters.Add("@coursetype", MySqlDbType.VarChar).Value = cmbCourse.Text;
                 command.ExecuteNonQuery();
+
+
+                carteiras.Add(new { Nome = txtName.Text, Instituição = txtInstitution.Text, RG = txtRg.Text, Código = "asdasdasd", Expedição = new DateTime().Day + "/" + new DateTime().Month + "/" + new DateTime().Year }) ;
+
+
+                dataGrid.ItemsSource = carteiras;
+                dataGrid.Items.Refresh();
+
             }
             finally
             {
@@ -64,6 +87,16 @@ namespace UNE
                     connection.Close();
             }
 
+        }
+
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var carteiras = new[]
+            {
+                new {Nome = "", Instituição = "", RG = "", Código = "", Expedição = ""}
+            };
+            dataGrid.ItemsSource = carteiras;
         }
     }
 }
