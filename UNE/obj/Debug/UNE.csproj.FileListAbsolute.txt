@@ -13,3 +13,9 @@ C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.csproj.GenerateResource.cache
 C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.csproj.CoreCompileInputs.cache
 C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.exe
 C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.pdb
+C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\Google.Protobuf.dll
+C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\MySql.Data.dll
+C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\Google.Protobuf.xml
+C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\MySql.Data.xml
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.csproj.CopyComplete
