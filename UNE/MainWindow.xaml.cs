@@ -23,16 +23,8 @@ namespace UNE
     public partial class MainWindow : Window
     {
 
-        public struct MyData
-        {
-            public string name { set; get; }
-            public string institution { set; get; }
-            public string rg { set; get; }
-            public string code { set; get; }
-            public DateTime printDate { set; get; }
-        }
-
         List<object> carteiras = new List<object>();
+        List<long> codes = new List<long>();
         List<object> carteirasEmpty = new List<object>();
 
         public MainWindow()
@@ -66,9 +58,11 @@ namespace UNE
             command.CommandText = "SELECT * FROM carteiras";
             MySqlDataReader response = command.ExecuteReader();
             carteiras.Clear();
+            codes.Clear();
             while (response.Read())
             {
                 count++;
+                codes.Add( Convert.ToInt64(response["code"].ToString()) );
                 carteiras.Add(new { Nome = response["name"], Instituição = response["institution"], RG = response["rg"], Código = response["code"], Expedição = response["createdAt"] });
             }
             dataGrid.ItemsSource = carteirasEmpty;
@@ -91,10 +85,18 @@ namespace UNE
             var connString = "Server=localhost;Database=une-carteirinhas;Uid=root;Pwd=";
             var connection = new MySqlConnection(connString);
             var command = connection.CreateCommand();
+
+            Random R = new Random();
+            string code;
+            do
+            {
+                code = ((long)R.Next(0, 100000) * (long)R.Next(0, 100000)).ToString().PadLeft(10, '0');
+            } while (codes.Contains(Convert.ToInt64(code)));
+            
             try
             {
                 connection.Open();
-                command.CommandText = "INSERT INTO `carteiras` (`name`, `cpf`, `rg`, `birthday`, `institution`, `image`, `course`, `coursetype`) VALUES ( @name, @cpf, @rg, @birthday, @institution, @image, @course, @coursetype);";
+                command.CommandText = "INSERT INTO `carteiras` (`name`, `cpf`, `rg`, `birthday`, `institution`, `image`, `course`, `coursetype`, `code`) VALUES ( @name, @cpf, @rg, @birthday, @institution, @image, @course, @coursetype, @code);";
                 command.Parameters.Add("@name", MySqlDbType.VarChar).Value= txtName.Text.Trim();
                 command.Parameters.Add("@cpf", MySqlDbType.VarChar).Value= txtCpf.Text.Trim();
                 command.Parameters.Add("@rg", MySqlDbType.VarChar).Value = txtRg.Text.Trim();
@@ -103,6 +105,7 @@ namespace UNE
                 command.Parameters.Add("@image", MySqlDbType.VarChar).Value = "eu ts";
                 command.Parameters.Add("@course", MySqlDbType.VarChar).Value = txtCourse.Text.Trim();
                 command.Parameters.Add("@coursetype", MySqlDbType.VarChar).Value = cmbCourse.Text;
+                command.Parameters.Add("@code", MySqlDbType.VarChar).Value = code;
                 command.ExecuteNonQuery();
 
                 if (this.loadRegisters() == 0)
