@@ -27,6 +27,7 @@ namespace UNE
         List<object> carteiras = new List<object>();
         List<long> codes = new List<long>();
         List<object> carteirasEmpty = new List<object>();
+        string uriImage;
 
         public MainWindow()
         {
@@ -105,7 +106,7 @@ namespace UNE
                     command.Parameters.Add("@rg", MySqlDbType.VarChar).Value = txtRg.Text.Trim();
                     command.Parameters.Add("@birthday", MySqlDbType.VarChar).Value = dtpDate.Text;
                     command.Parameters.Add("@institution", MySqlDbType.VarChar).Value = txtInstitution.Text.Trim();
-                    command.Parameters.Add("@image", MySqlDbType.VarChar).Value = "eu ts";
+                    command.Parameters.Add("@image", MySqlDbType.VarChar).Value = uriImage;
                     command.Parameters.Add("@course", MySqlDbType.VarChar).Value = txtCourse.Text.Trim();
                     command.Parameters.Add("@coursetype", MySqlDbType.VarChar).Value = cmbCourse.Text;
                     command.Parameters.Add("@code", MySqlDbType.VarChar).Value = code;
@@ -134,6 +135,7 @@ namespace UNE
                 var dialogResult = openFileDialog.ShowDialog();
                 if (!dialogResult.HasValue) MessageBox.Show("Porra bixo, num fode !");
                 image.Source = new BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute));
+                uriImage = openFileDialog.FileName;
                 image.Width = 100;
                 image.Height = 100;
 
