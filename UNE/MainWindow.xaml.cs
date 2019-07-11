@@ -29,6 +29,7 @@ namespace UNE
         List<object> carteirasEmpty = new List<object>();
         string uriImage;
 
+
         public MainWindow()
         {
             
@@ -140,6 +141,12 @@ namespace UNE
                 image.Height = 100;
 
 
+            }
+            else
+            {
+                WebCam cameraForm = new WebCam();
+                cameraForm.Show();
+                this.Hide();
             }
         }
 

@@ -19,3 +19,5 @@ C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\MySql.Data.dll
 C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\Google.Protobuf.xml
 C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\MySql.Data.xml
 C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.csproj.CopyComplete
+C:\Users\mateu\source\repos\UNE\UNE\bin\Debug\DShowNET.dll
+C:\Users\mateu\source\repos\UNE\UNE\obj\Debug\UNE.WebCam.resources
