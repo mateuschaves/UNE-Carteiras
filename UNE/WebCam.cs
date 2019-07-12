@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
+using System.Windows.Media.Imaging;
 
 namespace UNE
 {
@@ -79,6 +80,28 @@ namespace UNE
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Erro " + ex.Message);
+            }
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                caminhoImagemSalva = @"C:\Users\mateu\OneDrive\Documents\images\" + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Millisecond.ToString() + ".jpg";
+                pictureBox2.Image.Save(caminhoImagemSalva, ImageFormat.Jpeg);
+                MessageBox.Show("Imagem salva com sucesso");
+                MainWindow mainForm = new MainWindow();
+
+                mainForm.image.Source = new BitmapImage(new Uri(caminhoImagemSalva, UriKind.Absolute));
+                mainForm.image.Width = 100;
+                mainForm.image.Height = 150;
+                mainForm.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("aksdjajksd");
                 MessageBox.Show("Erro " + ex.Message);
             }
         }
