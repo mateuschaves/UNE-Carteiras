@@ -31,7 +31,7 @@
         <Label x:Name="label_Copy4" Content="RG" HorizontalAlignment="Left" Margin="1032,326,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" RenderTransformOrigin="-0.4,0.52" FontSize="14" FontWeight="Medium"/>
         <TextBox x:Name="txtCpf" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="1036,422,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
         <Label x:Name="label_Copy5" Content="CPF" HorizontalAlignment="Left" Margin="1032,392,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" RenderTransformOrigin="-0.611,0.28" FontSize="14" FontWeight="Medium"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="1094,572,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\mateu\source\repos\UNE\UNE\download.jpeg"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="1094,574,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\mateu\source\repos\UNE\UNE\download.jpeg"/>
         <Label x:Name="label1" Content="Foto" HorizontalAlignment="Left" Margin="1125,530,0,0" VerticalAlignment="Top" FontFamily="Arial" FontStretch="Condensed" FontSize="14" FontWeight="Medium"/>
         <Button x:Name="btnArchive" Content="Arquivo" HorizontalAlignment="Left" Margin="1036,481,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click" Height="35"/>
         <Button x:Name="btnCam" Content="Câmera" HorizontalAlignment="Left" Margin="1146,481,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click" Height="35"/>
@@ -41,5 +41,6 @@
         </DataGrid>
         <Grid HorizontalAlignment="Left" Height="100" Margin="200,285,0,0" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="noData" FontSize="30" Content="Sem registros" HorizontalAlignment="Left" Margin="458,241,0,0" VerticalAlignment="Top" Width="319"/>
+        <TextBlock x:Name="lblpathImage" HorizontalAlignment="Left" Margin="794,771,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Opacity="0"/>
     </Grid>
 </Window>

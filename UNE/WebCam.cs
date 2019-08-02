@@ -96,6 +96,7 @@ namespace UNE
                 mainForm.image.Source = new BitmapImage(new Uri(caminhoImagemSalva, UriKind.Absolute));
                 mainForm.image.Width = 100;
                 mainForm.image.Height = 150;
+                mainForm.lblpathImage.Text = caminhoImagemSalva;
                 mainForm.Show();
                 this.Hide();
             }
